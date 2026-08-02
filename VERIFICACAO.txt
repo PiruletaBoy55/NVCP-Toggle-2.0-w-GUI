@@ -1,0 +1,53 @@
+NVCP Toggle GUI 0.2.0-beta — relatório de verificação
+Data: 2026-08-02
+
+COMPILAÇÃO
+- Compilador: clang-cl 17.0.0
+- Linker: lld-link 17.0.0
+- Alvo: x86_64-pc-windows-msvc
+- Formato: PE32+ AMD64
+- Subsistema: Windows GUI
+- Proteções de cabeçalho: ASLR, DEP/NX e high-entropy VA
+- Timestamp PE: 0, para build byte a byte reproduzível
+- Runtime .NET/CLR: não presente
+- Assinatura digital: não presente
+
+IMPORTS ESTÁTICOS
+- KERNEL32.dll
+- USER32.dll
+- GDI32.dll
+- COMCTL32.dll
+
+INTEGRAÇÃO VISUAL
+- DWM e UxTheme são carregados dinamicamente.
+- A barra de título solicita modo escuro e cantos arredondados quando disponíveis.
+- A cor de destaque é consultada no Windows em tempo de execução.
+- Os sliders são controles próprios e não usam msctls_trackbar32.
+- A interface usa desenho com buffer duplo e escala pelo DPI do sistema.
+
+NVAPI
+- nvapi64.dll é carregada dinamicamente do driver NVIDIA instalado.
+- Nenhuma DLL NVIDIA é incluída no pacote.
+
+VALIDAÇÕES CONCLUÍDAS
+- Build com /W4 sem avisos.
+- Análise estática do Clang sem diagnósticos.
+- Parser compatível com o appSettings legado com vírgula final.
+- Conversão DVC verificada em diferentes intervalos de driver.
+- Geração da rampa de gama verificada em valores normais e extremos.
+- Rampa neutra confirmada como 0..65535 em passos de 257.
+- Mapeamento dos sliders verificado nos três intervalos utilizados.
+- Estrutura persistente e checksum revisados.
+- Imports e diretório CLR inspecionados.
+- Build reproduzível por scripts/build-cross.sh.
+
+LIMITAÇÃO DE VALIDAÇÃO
+- Não houve execução em Windows nem aplicação real em monitor/driver NVIDIA neste ambiente.
+- O desenho final da barra de título, a fonte e o DPI devem ser conferidos em Windows 11.
+- A versão deve ser considerada beta até concluir o roteiro de teste físico descrito em LEIA-ME.txt.
+
+SHA-256
+- NVCP Toggle GUI.exe: bf9cd23b33357441631d4d78b082fcfd119c3d1fbfcb529225128d703a9b21bb
+- NVCP Toggle Quick.exe: bf9cd23b33357441631d4d78b082fcfd119c3d1fbfcb529225128d703a9b21bb
+
+Os hashes são iguais porque os dois arquivos contêm o mesmo programa. O modo Quick é selecionado pelo nome do executável.

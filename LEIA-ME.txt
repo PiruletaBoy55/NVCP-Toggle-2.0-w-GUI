@@ -1,0 +1,78 @@
+NVCP Toggle GUI 0.2.0-beta
+Windows x64 · monitor principal · placa/driver NVIDIA
+
+NOVO VISUAL
+
+- Interface totalmente redesenhada em modo escuro.
+- Aparência inspirada nas ferramentas nativas do Windows 11.
+- Barra de título escura e cantos arredondados quando suportados pelo sistema.
+- Cor de destaque obtida das configurações atuais do Windows.
+- Tipografia Segoe UI Variable, cartões discretos, switches e seletor segmentado.
+- Sliders minimalistas próprios, com trilha fina e indicador circular.
+- Navegação por Tab e ajuste dos sliders por setas, Page Up, Page Down, Home e End.
+- Escala automática conforme o DPI configurado no Windows.
+
+A lógica de aplicação, captura, restauração e toggle permanece igual à versão anterior.
+O formato de appSettings.json e state.bin também não foi alterado.
+
+PRIMEIRO USO RECOMENDADO
+
+1. Extraia TODOS os arquivos para uma pasta com permissão de escrita.
+2. Abra “NVCP Toggle GUI.exe”.
+3. Mantenha ativado o switch “Capturar estado antes de ativar”.
+4. Selecione “Perfil ajustado” e configure os sliders.
+5. Use “Aplicar perfil” ou ative “Pré-visualização em tempo real”.
+6. Use “Restaurar estado capturado” para confirmar que o retorno funciona.
+7. Clique em “Salvar configurações”.
+8. Depois, use “NVCP Toggle Quick.exe” como atalho de toggle:
+   - primeira execução: captura o estado atual e aplica o perfil ajustado;
+   - segunda execução: restaura exatamente o estado capturado.
+
+COMO DEFINIR UM RETORNO FIXO
+
+1. Selecione “Perfil de retorno”.
+2. Ajuste os sliders para os valores desejados.
+3. Aplique o perfil para testá-lo e salve as configurações.
+4. Desative o switch “Capturar estado antes de ativar”.
+
+Nesse modo, o toggle usa o perfil de retorno manual em vez de recapturar o estado real do monitor.
+
+CONTROLE DOS SLIDERS
+
+- Mouse: clique ou arraste o indicador.
+- Teclado: use Tab para chegar ao slider.
+- Setas: ajuste de uma unidade.
+- Page Up/Page Down: ajuste pelo passo maior do controle.
+- Home/End: valor mínimo ou máximo.
+
+ARQUIVOS
+
+- NVCP Toggle GUI.exe: abre a interface.
+- NVCP Toggle Quick.exe: faz o toggle imediatamente.
+- appSettings.json: configurações persistentes, ao lado dos executáveis.
+- Estado capturado: %LOCALAPPDATA%\NVCP Toggle GUI\state.bin
+
+RECUPERAÇÃO
+
+- Se o perfil ajustado estiver ativo, execute “NVCP Toggle Quick.exe” novamente ou use
+  “Restaurar estado capturado” na interface.
+- Não apague state.bin enquanto o perfil ajustado estiver ativo; esse arquivo contém a
+  rampa RGB e os valores necessários para a restauração exata.
+- Caso o monitor principal seja trocado, capture novamente o estado antes de usar o toggle.
+- “Valores neutros” carrega 50/0/0,50/0,50/1,00 no perfil selecionado. Depois use
+  “Aplicar perfil” para efetivar esses valores.
+
+LIMITAÇÕES DESTA BETA
+
+- Atua somente no monitor principal.
+- A aplicação depende do driver NVIDIA instalado e das funções que ele disponibiliza.
+- Brilho, contraste e gama são aplicados pela rampa de gama do Windows. Gerenciadores de
+  perfil de cor podem reaplicar outra rampa e substituir o resultado.
+- O executável não possui assinatura digital. O Windows SmartScreen pode exibir um aviso.
+- A compilação, a análise estática e os testes offline foram concluídos, mas não houve
+  execução real desta interface em uma sessão Windows 11 neste ambiente. Faça o primeiro
+  teste com acesso fácil ao botão “Restaurar estado capturado”.
+
+LICENÇA
+
+GPL-3.0-only. Consulte LICENSE.txt e THIRD_PARTY_NOTICES.txt.

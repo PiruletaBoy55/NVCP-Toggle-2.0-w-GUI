@@ -1,0 +1,35 @@
+# Avisos de terceiros
+
+## NVCP_Toggle
+
+Este trabalho foi criado a partir do objetivo e do comportamento do projeto `mcgrizzz/NVCP_Toggle`, distribuído sob a GNU General Public License v3.0.
+
+Projeto: https://github.com/mcgrizzz/NVCP_Toggle
+
+O programa original usa valores fixos para o retorno. Esta versão substitui esse fluxo por perfis editáveis e captura/restauração persistente.
+
+## NvAPIWrapper
+
+As declarações e o tratamento das funções privadas de DVC/HUE foram conferidos e adaptados com base no projeto `falahati/NvAPIWrapper`, licenciado sob LGPL-3.0.
+
+Projeto: https://github.com/falahati/NvAPIWrapper
+
+A biblioteca binária NvAPIWrapper não é incluída neste pacote.
+
+## WindowsDisplayAPI
+
+O cálculo da rampa de gama foi adaptado do projeto `falahati/WindowsDisplayAPI`, licenciado sob LGPL-3.0.
+
+Projeto: https://github.com/falahati/WindowsDisplayAPI
+
+A biblioteca binária WindowsDisplayAPI não é incluída neste pacote.
+
+## NVIDIA NVAPI
+
+A implementação da NVAPI não é distribuída neste pacote. O programa carrega `nvapi64.dll`, fornecida pelo driver NVIDIA instalado no computador. O repositório público do SDK NVAPI contém cabeçalhos, definições de interface e bibliotecas de importação sob licença MIT.
+
+Projeto: https://github.com/NVIDIA/nvapi
+
+## Licenças
+
+O código combinado desta versão é distribuído sob GPL-3.0-only. O texto da GPL v3 está em `LICENSE.txt`; o texto da LGPL v3 usado pelos projetos de referência está em `THIRD_PARTY_LICENSES/LGPL-3.0.txt`.
